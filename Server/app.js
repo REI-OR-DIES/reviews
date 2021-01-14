@@ -1,21 +1,22 @@
 /* eslint-disable no-console */
 const express = require('express');
-const mongoose = require('mongoose');
-const product = require('../Database/model.js');
-
-const url = 'mongodb://127.0.0.1:27017/products';
-
-mongoose.connect(url, { useUnifiedTopology: true, useNewUrlParser: true });
-
-const { connection } = mongoose;
-
-connection.once('open', () => {
-  console.log('MongoDB database connection established successfully');
-});
-
-const app = express();
+const path = require('path');
+const db = require('../Database/index.js');
 
 const PORT = 3000;
+const app = express();
+app.use(express.json());
+
+app.get('/api/reviews', (req, res) => {
+  db.find((err, data) => {
+    if (err) {
+      res.status(400);
+    } else {
+      res.status(200);
+      res.send(data);
+    }
+  });
+});
 
 app.listen(PORT, ((err) => {
   if (err) {
