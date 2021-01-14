@@ -4,11 +4,8 @@ const { Schema } = mongoose;
 
 let product = new Schema(
   {
-    name: { String, unique: false },
-    poster: {
-      username: [String],
-      reviewcount: [Number],
-    },
+    userName: String,
+    reviewCount: Number,
     title: String,
     createdAt: Date,
     helpfulYes: Number,

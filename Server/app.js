@@ -1,10 +1,17 @@
+/* eslint-disable no-console */
 const express = require('express');
 const mongoose = require('mongoose');
-let product = require ('../Database/model.js');
+const product = require('../Database/model.js');
 
-let url = 'mongodb://127.0.0.1:27017/products';
+const url = 'mongodb://127.0.0.1:27017/products';
 
-mongoose.connect()
+mongoose.connect(url, { useUnifiedTopology: true, useNewUrlParser: true });
+
+const { connection } = mongoose;
+
+connection.once('open', () => {
+  console.log('MongoDB database connection established successfully');
+});
 
 const app = express();
 
