@@ -18,7 +18,7 @@ MongoClient.connect(url, (err, client) => {
 
   const reviews = [];
 
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 1; i++) {
     const review = {
       userName: faker.internet.userName(),
       reviewCount: Math.floor(Math.random() * 20),

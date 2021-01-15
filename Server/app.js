@@ -19,6 +19,31 @@ app.get('/api/reviews', (req, res) => {
   });
 });
 
+app.post('/api/reviews', (req, res) => {
+  console.log(req.body);
+  const item = {
+    userName: req.body.userName,
+    reviewCount: req.body.count,
+    title: req.body.title,
+    createdAt: req.body.createdAt,
+    helpfulYes: req.body.helpfulYes,
+    body: req.body.body,
+    location: req.body.city,
+    inappropriate: req.body.inappropriate,
+    recommend: req.body.recommend,
+  };
+  db.create(item, (err, data) => {
+    if (err) {
+      res.status(400);
+      console.log('no');
+    } else {
+      res.status(201);
+      res.send(data);
+      console.log('posted');
+    }
+  });
+});
+
 app.listen(PORT, ((err) => {
   if (err) {
     throw err;

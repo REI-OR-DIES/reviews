@@ -22,7 +22,6 @@ const review = new Schema(
     title: String,
     createdAt: Date,
     helpfulYes: Number,
-    helpfulNo: Number,
     body: String,
     location: String,
     inappropriate: Boolean,
