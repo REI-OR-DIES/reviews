@@ -18,17 +18,22 @@ MongoClient.connect(url, (err, client) => {
 
   const reviews = [];
 
-  for (let i = 0; i < 1; i++) {
+  for (let i = 0; i < 2; i++) {
     const review = {
       userName: faker.internet.userName(),
+      rating: Math.floor(Math.random() * 5),
+      photo: faker.image.imageUrl(),
       reviewCount: Math.floor(Math.random() * 20),
       title: faker.lorem.words(7),
       createdAt: faker.date.recent(),
-      helpfulYes: faker.random.boolean(),
+      helpfulYes: 0,
+      helpfulNo: 0,
       body: faker.lorem.words(30),
       location: faker.address.city(),
       inappropriate: false,
       recommend: faker.random.boolean(),
+      email: faker.internet.email(),
+      age: Math.floor(Math.random() * 82) + 18,
     };
     reviews.push(review);
   }
