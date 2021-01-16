@@ -2,7 +2,6 @@
 /* eslint-disable no-plusplus */
 const faker = require('faker');
 const { MongoClient } = require('mongodb');
-const _ = require('lodash');
 
 const url = 'mongodb://localhost:27017';
 

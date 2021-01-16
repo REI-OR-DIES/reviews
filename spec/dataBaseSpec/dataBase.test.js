@@ -1,28 +1,43 @@
-const { MongoClient } = require('mongodb');
+/* eslint-disable no-console */
+const mongoose = require('mongoose');
+const { ObjectID } = require('mongodb');
+const db = require('../../Database/index.js');
 
 describe('insert', () => {
-  let connection;
-  let db;
-
   beforeAll(async () => {
-    connection = await MongoClient.connect(global.__MONGO_URI__, {
-      useNewUrlParser: true,
+    mongoose.connect('mongodb://localhost:27017/products', { useNewUrlParser: true });
+
+    const { connection } = mongoose;
+
+    connection.once('open', (err) => {
+      if (err) {
+        throw err;
+      }
     });
-    db = await connection.db(global.__MONGO_DB_NAME__);
   });
 
   afterAll(async () => {
-    await connection.close();
-    await db.close();
+    await mongoose.connection.close();
   });
 
-  it('should insert a doc into collection', async () => {
-    const users = db.collection('users');
+  it('should insert a review into collection', async () => {
+    const review = {
+      userName: 'testUser',
+      age: 24,
+      email: 'testEmail@test.com',
+      rating: 3,
+      title: 'Title',
+      helpfulYes: 0,
+      body: 'Text',
+      photo: 'url',
+      location: 'Denver',
+      inappropriate: false,
+      recommend: true,
+    };
 
-    const mockUser = {_id: 'some-user-id', name: 'John'};
-    await users.insertOne(mockUser);
+    db.create(review);
 
-    const insertedUser = await users.findOne({_id: 'some-user-id'});
-    expect(insertedUser).toEqual(mockUser);
+    const createdReview = await db.findOne({ userName: 'testUser' });
+    expect(createdReview.email).toEqual(review.email);
   });
 });
