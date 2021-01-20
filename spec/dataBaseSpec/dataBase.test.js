@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 const mongoose = require('mongoose');
 const { ObjectID } = require('mongodb');
-const db = require('../../Database/index.js');
+const db = require('../../DataBase/index.js');
 
 describe('insert', () => {
   beforeAll(async () => {
