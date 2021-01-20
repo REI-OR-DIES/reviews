@@ -6,7 +6,9 @@ const db = require('../Database/index.js');
 
 const PORT = 3000;
 const app = express();
+
 app.use(express.json());
+app.use(express.static(`${__dirname}/../public`));
 
 app.get('/api/reviews', (req, res) => {
   db.find((err, data) => {
