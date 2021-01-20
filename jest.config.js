@@ -1,6 +1,6 @@
 module.exports = {
   preset: '@shelf/jest-mongodb',
   modulePaths: [
-    '<rootDir>',
+    '<rootDir>/DataBase/model.js',
   ],
 };
