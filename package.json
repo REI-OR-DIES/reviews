@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/General-Assembly-Rejects/GAR-FEC-REVIEWS#readme",
   "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.12.10",
     "@shelf/jest-mongodb": "^1.2.3",
     "babel-watch": "^7.3.0",
     "express": "^4.17.1",
