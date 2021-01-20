@@ -17,7 +17,7 @@ jobs:
     # A list of available CircleCI docker Convenience Images are available here: https://circleci.com/developer/images/image/cimg/node
     docker:
       - image: cimg/node:15.1
-      - image: circle/mongo:4.4.3
+      - image: circleci/mongo:4.4.3
         
     # Then run your tests!
     # CircleCI will report the results back to your VCS provider.
