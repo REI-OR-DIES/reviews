@@ -17,16 +17,20 @@ const { Schema } = mongoose;
 
 const review = new Schema(
   {
+    rating: Number,
     userName: String,
+    age: Number,
     reviewCount: Number,
     title: String,
     createdAt: Date,
     helpfulYes: Number,
     helpfulNo: Number,
     body: String,
+    photo: String,
     location: String,
     inappropriate: Boolean,
     recommend: Boolean,
+    email: String,
   },
   { versionKey: false },
   { collection: 'products' },
