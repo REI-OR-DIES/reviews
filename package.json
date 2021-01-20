@@ -4,6 +4,8 @@
   "description": "Reviews Hack Reactor FEC- Ryan Evanyo",
   "main": "index.js",
   "scripts": {
+    "test:watch": "jest --watch",
+    "test:db": "jest ./spec/dataBaseSpec/dataBase.test.js",
     "test": "jest ./spec/sum.test.js",
     "start": " nodemon ./Server/app.js",
     "seed": " node ./Data-Import/seed.js",
