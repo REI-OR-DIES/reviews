@@ -4,7 +4,7 @@
   "description": "Reviews Hack Reactor FEC- Ryan Evanyo",
   "main": "index.js",
   "scripts": {
-    "db:test": "jest ./spec/dataBaseSpec/dataBase.test.js",
+    "test": "jest ./spec/sum.test.js",
     "start": " nodemon ./Server/app.js",
     "seed": " node ./Data-Import/seed.js"
   },
@@ -27,6 +27,7 @@
     "mongo-seeding": "^3.5.0",
     "mongodb": "^3.6.3",
     "mongoose": "^5.11.11",
+    "nightwatch": "^1.5.1",
     "nodemon": "^2.0.7",
     "react": "^17.0.1"
   },
