@@ -8,8 +8,6 @@ const { connection } = mongoose;
 connection.once('open', (err) => {
   if (err) {
     throw err;
-  } else {
-    console.log('Connected to MongoDB');
   }
 });
 
