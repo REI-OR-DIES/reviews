@@ -18,6 +18,7 @@ jobs:
     docker:
       - image: cimg/node:15.1
       - image: circle/mongo:4.4.3
+        
     # Then run your tests!
     # CircleCI will report the results back to your VCS provider.
     steps:
@@ -30,8 +31,12 @@ jobs:
       # - node/install-packages:
       #     pkg-manager: yarn 
       - run:
+          name: Seed
+          command: npm run seed
+      - run:
           name: Run tests
           command: npm run db:test
+          
 
 workflows:
   # Below is the definition of your workflow.
