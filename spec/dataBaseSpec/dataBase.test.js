@@ -1,43 +1,43 @@
-/* eslint-disable no-console */
-const mongoose = require('mongoose');
-const { ObjectID } = require('mongodb');
-const db = require('../../DataBase/index.js');
+const { MongoNetworkError } = require('mongodb');
+const { MongoClient } = require('mongodb');
 
-describe('insert', () => {
+describe('dataBase', () => {
+  let connection;
+  let db;
+
   beforeAll(async () => {
-    mongoose.connect('mongodb://localhost:27017/products', { useNewUrlParser: true });
-
-    const { connection } = mongoose;
-
-    connection.once('open', (err) => {
-      if (err) {
-        throw err;
-      }
+    connection = await MongoClient.connect(global.__MONGO_URI__, {
+      useNewUrlParser: true,
     });
+    db = await connection.db(global.__MONGO_DB_NAME__);
   });
 
   afterAll(async () => {
-    await mongoose.connection.close();
+    await connection.close();
+    await db.close();
   });
 
-  it('should insert a review into collection', async () => {
-    const review = {
-      userName: 'testUser',
-      age: 24,
-      email: 'testEmail@test.com',
-      rating: 3,
-      title: 'Title',
-      helpfulYes: 0,
-      body: 'Text',
-      photo: 'url',
-      location: 'Denver',
-      inappropriate: false,
-      recommend: true,
-    };
+  it('should insert a doc into collection', async () => {
+    const users = db.collection('users');
 
-    db.create(review);
+    const mockUser = { _id: 'some-user-id', name: 'John' };
+    await users.insertOne(mockUser);
 
-    const createdReview = await db.findOne({ userName: 'testUser' });
-    expect(createdReview.email).toEqual(review.email);
+    const insertedUser = await users.findOne({ _id: 'some-user-id' });
+    expect(insertedUser).toEqual(mockUser);
+  });
+
+  it('should update a doc based off an id', async () => {
+    const users = db.collection('users');
+
+    const mockUser = { _id: '1234', name: 'Bob' };
+    await users.insertOne(mockUser);
+
+    const query = { _id: '1234' };
+    const newValues = { $set: { name: 'Ryan' } };
+
+    users.updateOne(query, newValues);
+    const updatedUser = await users.findOne({ _id: '1234' });
+    expect(updatedUser.name).toEqual('Ryan');
   });
 });
