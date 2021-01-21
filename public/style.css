@@ -1,0 +1,55 @@
+.ReviewSnapShot {
+    align-content: center;
+    margin-bottom: 10px;
+    height: auto;
+}
+
+.ReviewCounts {
+    width: 387px;
+    position: relative;
+    float: left;
+    height: 300px;
+}
+
+.starRating {
+    box-sizing: content-box;
+    width: 387px;
+    position: relative;
+    float: right;
+    height: 300px;
+}
+
+.actionBox {
+    height: 44px;
+}
+
+.button1 {
+    color: white;
+    display: block;
+    background-color: rgb(0, 113, 141);
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.1) 0px, rgba(255,255,255,0) 100%);
+    float: right;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    padding-right: 16px;
+    padding-left: 16px;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h2 {
+    line-height: 32px;
+    height: 32px;
+    display: block;
+    text-align: left;
+    float: left;
+    width: 81px;
+    left: auto;
+    bottom: auto;
+    font-weight: 400;
+    font-size: 22;
+    font-family: "Roboto","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
