@@ -1,4 +1,4 @@
-import React from 'React';
+import React from 'react';
 import ReviewCounts from './ReviewCounts.jsx';
 import StarRating from './StarRating.jsx';
 
