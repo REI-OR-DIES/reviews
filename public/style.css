@@ -53,3 +53,237 @@ h2 {
     font-size: 22;
     font-family: "Roboto","Helvetica Neue","Helvetica","Arial",sans-serif;
 }
+
+.reviewEntryContainer {
+    margin: auto;
+    width: 1043px;
+    padding-top: 16px;
+    display: flex;
+    height: auto;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(201,201,201)
+}
+
+.authorProfile {
+    width: 258px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.reviewDiv {
+    padding-left: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    flex: 1;
+}
+
+.usernameContainer {
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.usernameDiv {
+    margin-top: 4px;
+}
+
+.usernameSpan {
+    margin-right: 5px;
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: 16px;
+    font-weight: 700;
+    line-height: 26px;
+    text-align: left;
+}
+
+.locationCountContainer{
+    height: 57px;
+}
+
+.locationDiv {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.countDiv {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.locationSpan {
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    text-align: left;
+}
+
+.countTitleSpan {
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    text-align: left;
+}
+
+.countSpan {
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: 16px;
+    font-weight: 700;
+    line-height: 26px;
+    text-align: left;
+}
+
+.reviewStarDateContainer {
+    display: flex;
+}
+.reviewHeader {
+    padding-right: 16px;
+    padding-left: 8px;
+}
+
+.dateDiv {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    flex: 1;
+    line-height: 20px;
+    font-size:14px;
+    font-weight: 400;
+    font-family:"Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.starRatingSpan {
+    width: 97px;
+    padding-bottom: 2.5px;
+    padding-top: 2.5px;
+}
+.reviewTitleDiv {
+    width: 595px;
+    height: 24.75px;
+}
+.reviewTitle {
+    margin-bottom: 4.75px;
+    margin-top: 0px;
+    line-height: 20px;
+    height: 20px;
+    font-weight: 700;
+    font-size: 19px;
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.reviewSummary {
+    padding-top: 8px;
+    padding-left: 8px;
+    padding-right: 16px;
+}
+.reviewContent {
+    margin-bottom: 16px;
+    margin-top: 0px;
+    line-height: 26px;
+    height: 26px;
+    font-weight: 400;
+    font-size: 16px;
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.ageRecommendContainer {
+    margin-bottom: 20px;
+}
+
+.ageRecommendSpan {
+    margin-right: 5px;
+}
+
+.ageRecommendLi{
+    list-style: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.ageRecommendUl {
+    margin-left: -40px
+}
+.ageRecommendSpan{
+    font-size: 15px;
+    font-weight: 700;
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.checkSpan{
+    padding-right: 10px;
+    margin-top: 2px
+}
+.reviewInputsContainer {
+    margin-bottom: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+.helpfulDiv {
+    width: 68px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 10px;
+    padding-bottom: 0px;
+    display: inline-block;
+}
+
+.helpfulText {
+    font-size:16px;
+    font-weight: 400;
+    font-family:"Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.helpfulBtnDiv {
+    display: inline-block;
+    margin-right: 5px;
+    width: 126px;
+}
+.reportDiv {
+    display: inline-block;
+}
+
+.btnYes {
+    border-width: 0px;
+    background-color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-right: 2px;
+    padding-left: 2px;
+    margin-right: 5px;
+    font-size:14px;
+    font-weight: 400;
+    font-family:"Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.btnNo{
+    border-width: 0px;
+    background-color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-right: 2px;
+    padding-left: 2px;
+    font-size:14px;
+    font-weight: 400;
+    font-family:"Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.reportBtn{
+    width: 167px;
+    border-color: rgb(184,184,184);
+    border-width: 1px;
+    border-radius: 2px;
+    height: 30px;
+    line-height: 24px;
+    font-family:  "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: white;
+    font-size: 14px
+
+}
+.yesText {
+    margin-left: 3px;
+    color: green;
+}
+.noText {
+    padding-left: 3px;
+    color: red
+}
