@@ -29,6 +29,8 @@ const review = new Schema(
     inappropriate: Boolean,
     recommend: Boolean,
     email: String,
+    yesClicked: Boolean,
+    noClicked: Boolean,
   },
   { versionKey: false },
   { collection: 'products' },

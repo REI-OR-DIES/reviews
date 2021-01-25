@@ -182,7 +182,7 @@ h2 {
     margin-bottom: 16px;
     margin-top: 0px;
     line-height: 26px;
-    height: 26px;
+    height: auto;
     font-weight: 400;
     font-size: 16px;
     font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -286,4 +286,15 @@ h2 {
 .noText {
     padding-left: 3px;
     color: red
+}
+.reportBtnClicked{
+    width: 167px;
+    border-color: rgb(184,184,184);
+    border-width: 0px;
+    border-radius: 2px;
+    height: 30px;
+    line-height: 24px;
+    font-family:  "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: white;
+    font-size: 14px
 }

@@ -62,10 +62,36 @@ app.put('/api/reviews/:id/helpfulYes', (req, res) => {
   });
 });
 
+app.put('/api/reviews/:id/helpfulYesClicked', (req, res) => {
+  const query = { _id: req.params.id };
+  const clicked = { $set: { yesClicked: true } };
+  db.updateOne(query, clicked, (err, data) => {
+    if (err) {
+      res.status(400);
+    } else {
+      res.status(200);
+      res.send(data);
+    }
+  });
+});
+
 app.put('/api/reviews/:id/helpfulNo', (req, res) => {
   const query = { _id: req.params.id };
   const newValues = { $inc: { helpfulNo: 1 } };
   db.updateOne(query, newValues, (err, data) => {
+    if (err) {
+      res.status(400);
+    } else {
+      res.status(200);
+      res.send(data);
+    }
+  });
+});
+
+app.put('/api/reviews/:id/helpfulNoClicked', (req, res) => {
+  const query = { _id: req.params.id };
+  const clicked = { $set: { noClicked: true } };
+  db.updateOne(query, clicked, (err, data) => {
     if (err) {
       res.status(400);
     } else {
