@@ -3,6 +3,7 @@ import axios from 'axios';
 import ReviewList from './ReviewList.jsx';
 import ReviewSnapShot from './ReviewSnapShot.jsx'
 import ReviewEntry from './ReviewEntry.jsx';
+import FormModal from './FormModal.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -55,6 +56,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <div>
+          <FormModal />
+        </div>
         <ReviewList reviews={this.state.reviews} onYesClick={this.onYesClick} onYesClicked={this.onYesClicked} onNoClick={this.onNoClick} onNoClicked={this.onNoClicked} onInappropriate ={this.onInappropriate} />
       </div>
     );

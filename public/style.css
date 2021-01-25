@@ -298,3 +298,482 @@ h2 {
     background-color: white;
     font-size: 14px
 }
+
+.ReviewSnapShot {
+    align-content: center;
+    margin-bottom: 10px;
+    height: auto;
+}
+
+.ReviewCounts {
+    width: 387px;
+    position: relative;
+    float: left;
+    height: 300px;
+}
+
+.starRating {
+    box-sizing: content-box;
+    width: 387px;
+    position: relative;
+    float: right;
+    height: 300px;
+}
+
+.actionBox {
+    height: 44px;
+}
+
+.button1 {
+    color: white;
+    display: block;
+    background-color: rgb(0, 113, 141);
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.1) 0px, rgba(255,255,255,0) 100%);
+    float: right;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    padding-right: 16px;
+    padding-left: 16px;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.closeModal {
+  float: right;
+  display:block;
+  box-sizing:border-box;
+  width:20px;
+  height:20px;
+  border-width:3px;
+  border-style: solid;
+  border-color:rgb(102, 102, 102);
+  border-radius:100%;
+  background: -webkit-linear-gradient(-45deg, transparent 0%, transparent 46%, white 46%,  white 56%,transparent 56%, transparent 100%), -webkit-linear-gradient(45deg, transparent 0%, transparent 46%, white 46%,  white 56%,transparent 56%, transparent 100%);
+  background-color:rgb(102, 102, 102);
+  box-shadow:0px 0px 5px 2px rgba(0,0,0,0.5);
+  transition: all 0.3s ease;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+h2 {
+    line-height: 32px;
+    height: 32px;
+    display: block;
+    text-align: left;
+    float: left;
+    width: 81px;
+    left: auto;
+    bottom: auto;
+    font-weight: 400;
+    font-size: 22;
+    font-family: "Roboto","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+
+.formSideBar {
+  height: 100%;
+  width: 225px;
+  position: fixed;
+  background-color: rgb(204,204,204);
+  margin-left: 0px;
+  top: 0px;
+  left: 0px;
+}
+
+.formContainer {
+    width: 675px;
+    float: right;
+    margin-left: 0px;
+    right: 0px;
+}
+
+.productOverviewDiv {
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.productOverviewTitle {
+    font-size: 22px;
+    font-weight: 400;
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+.requiredFieldsText {
+    font-size: 11.7px;
+    font-weight: 400;
+    height: 19px;
+    line-height: 19.5px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 11.7px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.productRatingDiv {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom-color: rgb(221, 221, 221);
+    border-bottom-width: 1px;
+    border-top-color: rgb(221, 221, 221);
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    overflow: hidden;
+}
+
+.productRatingSpanDiv {
+    padding-left: 20px;
+}
+
+
+.productRatingSpan {
+    padding-top: 9.6px;
+    padding-bottom: 9.6px;
+    padding-right: 12px;
+    float: left;
+    font-weight: 400;
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+}
+.reviewTitleContainer {
+    background-attachment: scroll;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-top-color: rgb(221, 221, 221);
+    border-bottom-color: rgb(221, 221, 221);
+    border-bottom-style: solid;
+    overflow: hidden;
+}
+.reviewTitleDiv {
+    background-attachment: scroll;
+    line-height: 19.2px;
+    padding-right: 20px;
+    padding-left: 20px;
+    overflow: hidden;
+}
+
+.reviewTitleForm {
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    float: left;
+    padding-right: 8px;
+}
+
+.reviewTitleInput {
+    width: 100%;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(221, 221, 221);
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgb(221, 221, 221);
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: rgb(221, 221, 221);
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-left-color: rgb(221, 221, 221);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 7.5;
+    padding-bottom: 7.5;
+    text-decoration-color: rgb(102, 102, 102);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 19.2px;
+    font-weight: 400;
+    float: left;
+    font-size: 16px;
+    font-family: "Arial", "Helvetica", "sans-serif";
+    box-sizing: border-box;
+}
+
+.reviewBodyContainer {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom-color: rgb(221, 221, 221);
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    overflow: hidden;
+}
+
+.reviewBodyDiv {
+    padding-right: 20px;
+    padding-left: 20px;
+    overflow: hidden;
+}
+
+.reviewBodyTitle {
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    float: left;
+    padding-right: 8px;
+}
+
+.reviewBodyInput {
+    width: 100%;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-width: 0px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(221, 221, 221);
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgb(221, 221, 221);
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: rgb(221, 221, 221);
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-left-color: rgb(221, 221, 221);
+    text-decoration-color: rgb(102, 102, 102);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 19.2px;
+    font-weight: 400;
+    float: left;
+    font-size: 16px;
+    font-family: "Arial", "Helvetica", "sans-serif";
+    box-sizing: border-box;
+    height: 90px;
+}
+
+.reviewBody {
+    padding-top: 7.5px;
+    padding-bottom: 7.5px;
+    padding-right: 15px;
+    padding-left: 15px;
+    font-size: 16px;
+    font-family: "Arial", "Helvetica", "sans-serif";
+    font-weight: 400;
+    text-decoration-color: rgb(102, 102, 102);
+    border-bottom-color: rgb(221, 221, 221);
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-top-width: 0px;
+    width: 100%;
+    box-sizing: border-box;
+    height: 90px;
+}
+
+.recommendContainer {
+    padding-top: 10px;
+    padding-bottom: 10x;
+    overflow: hidden;
+    height: 58px;
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(221, 221, 221);
+    border-bottom-style: solid;
+
+}
+
+.recommendTitle {
+    float: left;
+    margin-top: 0px;
+    padding-top: 0px;
+    padding-left: 20px;
+    padding-right: 8px;
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    width: 335px;
+    line-height: 24px;
+}
+
+.recommend {
+    padding-top: 3px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.recommendButtonSpan {
+    padding-left: 20px;
+    float: none;
+    box-sizing: content-box;
+    left: auto;
+    right: auto;
+}
+
+.recommendBtn {
+    border-radius: 4px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(204,204,204);
+    color: rgb(102,102,102);
+    width: 80px;
+    height: 16px;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    line-height: 16px;
+    box-sizing: content-box;
+    display: inline-block;
+    font-size: 16;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+
+}
+
+.ageContainer {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    overflow: hidden;
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(221, 221, 221);
+    border-bottom-style: solid;
+}
+
+.ageDiv {
+    padding-right: 50px;
+    padding-left: 20px
+}
+
+.ageTitle {
+    padding-top: 3.75px;
+    padding-bottom: 3.75px;
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.ageSelector {
+    float: right;
+    margin-left: 36px;
+    padding: 5px;
+    height: 32px;
+    line-height: 19.5px;
+    width: 248px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 400;
+    left: -1;
+    font-family: Arial;
+    border-width: 1px;
+    border-radius: 4.25px;
+    border-bottom-color: rgb(102,102,102);
+    border-top-color: rgb(204,204,204);
+    border-right-color: rgb(204,204,204);
+    border-left-color: rgb(204,204,204);
+    box-shadow: 0px 1px 0px 0px, rgb(255, 255, 255)
+}
+
+.usernameLocationContainer {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    overflow: hidden;
+    height: auto;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(221, 221, 221);
+}
+
+.usernameDiv {
+    padding-right: 20px;
+    padding-left: 20px;
+    float: left;
+}
+
+.locationDiv {
+    padding-right: 20px;
+    padding-left: 20px;
+    float: right
+}
+
+.usernameLocationSpan {
+    display:block;
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+
+}
+
+.usernameLocationInput {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 7.5px;
+    padding-top: 7.5px;
+    border-radius: 4px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(221, 221, 221);
+    width: 250px
+}
+.emailContainer {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(221, 221, 221);
+}
+.emailDiv {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.emailSpan {
+    display:block;
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+
+}
+
+.emailInput {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 7.5px;
+    padding-top: 7.5px;
+    border-radius: 4px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(221, 221, 221);
+    width: 250px
+}
+
+.submitContainer {
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.submitDiv {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.submitBtn {
+    background-color: rgb(0, 113, 141);
+    color: white;
+    border-radius: 2px;
+    border-width: 1px;
+    border-style: solid;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    width: auto;
+    line-height: 28px;
+    height: 44px;
+    font-size: 16px;
+    font-weight: 400;
+}

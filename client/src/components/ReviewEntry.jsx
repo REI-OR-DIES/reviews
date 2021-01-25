@@ -1,5 +1,7 @@
 import React from 'react';
 import moment from 'moment'
+import { FaStar } from 'react-icons/fa';
+
 
 function ReviewEntry(props) {
   
@@ -7,17 +9,19 @@ function ReviewEntry(props) {
   const inappropriateValue = props.review.inappropriate;
   let yesClickedValue = props.review.yesClicked;
   let onNoClickedValue = props.review.noClicked;
+  let ratingValue = props.review.rating;
 
   let recommend;
   let inappropriate;
   let yesClicked;
   let noClicked;
+  let ratingComponent;
 
   if (recommendValue === true) {
     recommend = (
       <ul className="ageRecommendUl">
         <li className="ageRecommendLi">
-          <span className="checkSpan"><a href="https://icon-library.net/icon/icon-check-mark-12.html" title="Icon Check Mark #74531"><img src="https://icon-library.net//images/icon-check-mark/icon-check-mark-12.jpg" width="19px" /></a></span>
+          <span className="checkSpan"><a title="Icon Check Mark #74531"><img src="https://icon-library.net//images/icon-check-mark/icon-check-mark-12.jpg" width="19px" /></a></span>
           <span className="ageRecommendSpan">Yes,   </span>
         </li>
         <li className="ageRecommendLi">I recommend this Product</li>
@@ -27,7 +31,7 @@ function ReviewEntry(props) {
     recommend = (
       <ul className="ageRecommendUl">
         <li className="ageRecommendLi">
-          <span className="checkSpan"><a href="https://icon-library.net/icon/no-icon-12.html" title="No Icon #178878"><img src="https://icon-library.net//images/no-icon/no-icon-12.jpg" width="17px" /></a></span>
+          <span className="checkSpan"><a title="No Icon #178878"><img src="https://icon-library.net//images/no-icon/no-icon-12.jpg" width="17px" /></a></span>
           <span className="ageRecommendSpan">No,   </span>
         </li>
         <li className="ageRecommendLi">I do not recommend this Product</li>
@@ -73,6 +77,67 @@ function ReviewEntry(props) {
       </button>
     );
   }
+  if (ratingValue === 0) {
+    ratingComponent = (
+      <span>
+        <FaStar size={15} color="rgb(201,201,201)" />
+        <FaStar size={15} color="rgb(201,201,201)" />
+        <FaStar size={15} color="rgb(201,201,201)" />
+        <FaStar size={15} color="rgb(201,201,201)" />
+        <FaStar size={15} color="rgb(201,201,201)" />
+      </span>
+    );
+  } if (ratingValue === 1) {
+    ratingComponent = (
+      <span>
+        <FaStar size={15} color="rgb(0, 113, 141)" />
+        <FaStar size={15} color="rgb(0, 113, 141)" />
+        <FaStar size={15} color="rgb(0, 113, 141)" />
+        <FaStar size={15} color="rgb(0, 113, 141)" />
+        <FaStar size={15} color="rgb(0, 113, 141)" />
+      </span>
+    );
+  } if (ratingValue === 2) {
+    ratingComponent = (
+      <span>
+        <FaStar size={15} color="rgb(0, 113, 141)" />
+        <FaStar size={15} color="rgb(0, 113, 141)" />
+        <FaStar size={15} color="rgb(201,201,201)" />
+        <FaStar size={15} color="rgb(201,201,201)" />
+        <FaStar size={15} color="rgb(201,201,201)" />
+      </span>
+    );
+  } if (ratingValue === 3) {
+    ratingComponent = (
+      <span>
+        <FaStar size={15} color="rgb(0, 113, 141)" />
+        <FaStar size={15} color="rgb(0, 113, 141)" />
+        <FaStar size={15} color="rgb(0, 113, 141)" />
+        <FaStar size={15} color="rgb(201,201,201)" />
+        <FaStar size={15} color="rgb(201,201,201)" />
+      </span>
+    );
+  } if (ratingValue === 4) {
+    ratingComponent = (
+      <span>
+        <FaStar size={15} color="rgb(0, 113, 141)" />
+        <FaStar size={15} color="rgb(0, 113, 141)" />
+        <FaStar size={15} color="rgb(0, 113, 141)" />
+        <FaStar size={15} color="rgb(0, 113, 141)" />
+        <FaStar size={15} color="rgb(201,201,201)" />
+      </span>
+    );
+  } if (ratingValue === 5) {
+    ratingComponent = (
+      <span>
+        <FaStar size={15} color="rgb(0, 113, 141)" />
+        <FaStar size={15} color="rgb(0, 113, 141)" />
+        <FaStar size={15} color="rgb(0, 113, 141)" />
+        <FaStar size={15} color="rgb(0, 113, 141)" />
+        <FaStar size={15} color="rgb(201,201,201)" />
+      </span>
+    );
+  }
 
   return (
     <div className="reviewEntryContainer">
@@ -95,7 +160,7 @@ function ReviewEntry(props) {
       <div className="reviewDiv">
         <div className="reviewHeader">
           <div className="reviewStarDateContainer">
-            <span className="starRatingSpan">aaaa</span>
+            <span className="starRatingSpan">{ratingComponent}</span>
             <div className="dateDiv">{moment(props.review.createdAt).fromNow()}</div>
           </div>
           <div className="reviewTitleDiv">
