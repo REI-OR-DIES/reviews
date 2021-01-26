@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { useState } from "react";
 import Modal from 'react-modal';
+import { FaStar } from 'react-icons/fa';
+import axios from 'axios';
 
 const customStyles = {
   content: {
@@ -16,9 +19,9 @@ const customStyles = {
   },
 };
 
-Modal.setAppElement('#app');
+Modal.setAppElement('#reviews-mount');
 
-function FormModal() {
+function FormModal(props) {
   const [modalIsOpen, setIsOpen] = React.useState(false);
   function openModal() {
     setIsOpen(true);
@@ -26,6 +29,58 @@ function FormModal() {
   function closeModal() {
     setIsOpen(false);
   }
+
+  const [title, setTitle] = useState("");
+  const [body, setBody] = useState("");
+  const [recommend, setRecommend] = useState("");
+  const [age, setAge] = useState("");
+  const [userName, setUserName] = useState("");
+  const [city, setLocation] = useState("");
+  const [email, setEmail] = useState("");
+  const [rating, setRating] = useState(null);
+  const [hover, setHover] = useState(null);
+
+  let postItem = {
+    userName,
+    age,
+    email,
+    rating,
+    title,
+    body,
+    location: city,
+    recommend,
+    inappropriate: false,
+  };
+
+  function handleSubmit() {
+    props.postReview(postItem)
+  }
+
+  const starRater = (
+    <div>
+      {[...Array(5)].map((star, i) => {
+        const ratingValue = i + 1;
+        return (
+          // eslint-disable-next-line jsx-a11y/label-has-associated-control
+          <label key={i + 1}>
+            <input
+              type="radio"
+              name="rating"
+              onClick={() => setRating(ratingValue)}
+              value={ratingValue}
+            />
+            <FaStar
+              className="star"
+              size={30}
+              color={ratingValue <= (hover || rating) ? 'rgb(0, 113, 141)' : '#e4e5e9'}
+              onMouseEnter={() => setHover(ratingValue)}
+              onMouseLeave={() => setHover(null)}
+            />
+          </label>
+        );
+      })}
+    </div>
+  );
 
   return (
     <div>
@@ -43,13 +98,18 @@ function FormModal() {
           <p className="requiredFieldsText">Required fields are marked with *</p>
           <div className="productRatingDiv">
             <div className="productRatingSpanDiv">
-              <span className="productRatingSpan">Product Rating</span>
+              <span className="productRatingSpan">
+                Product Rating*
+              </span>
+              <div className="StarRater">
+                {starRater}
+              </div>
             </div>
           </div>
           <div className="reviewTitleContainer">
             <div className="reviewTitleDiv">
               <span className="reviewTitleForm">Review Title*</span>
-              <input className="reviewTitleInput" placeholder="Example: Great on the Trails" />
+              <input className="reviewTitleInput" placeholder="Example: Great on the Trails" onChange={(e) => setTitle(e.target.value)} />
             </div>
           </div>
           <div className="reviewBodyContainer">
@@ -61,6 +121,7 @@ function FormModal() {
                   placeholder="Please keep your review focused on the product and your experience with it.
                   Your review is so important
                   for improving REI and the experience for other REI shoppers!"
+                  onChange={(e) => setBody(e.target.value)}
                 />
               </div>
             </div>
@@ -70,14 +131,14 @@ function FormModal() {
               <p className="recommend">Would you recommend this product to a friend?</p>
             </div>
             <span className="recommendButtonSpan">
-              <button className="recommendBtn" type="button">Yes</button>
-              <button className="recommendBtn" type="button">No</button>
+              <button className="recommendBtn" type="button" onClick={() => setRecommend(true)}>Yes</button>
+              <button className="recommendBtn" type="button" onClick={() => setRecommend(false)}>No</button>
             </span>
           </div>
           <div className="ageContainer">
             <div className="ageDiv">
               <span className="ageTitle">Age</span>
-              <select name="ageSelector" className="ageSelector">
+              <select name="ageSelector" className="ageSelector" onChange={(e) => setAge(e.target.value)}>
                 <option value="Select">Select</option>
                 <option value="under18">Under 18</option>
                 <option value="18-24">18-24</option>
@@ -92,22 +153,22 @@ function FormModal() {
           <div className="usernameLocationContainer">
             <div className="usernameDiv">
               <span className="usernameLocationSpan">Nickname*</span>
-              <input className="usernameLocationInput" placeholder="Example: jackie27" />
+              <input className="usernameLocationInput" placeholder="Example: jackie27" onChange={(e) => setUserName(e.target.value)} />
             </div>
             <div className="locationDiv">
               <span className="usernameLocationSpan">Location</span>
-              <input className="usernameLocationInput" placeholder="Example: Seattle, WA" />
+              <input className="usernameLocationInput" placeholder="Example: Seattle, WA" onChange={(e) => setLocation(e.target.value)} />
             </div>
           </div>
           <div className="emailContainer">
             <div className="emailDiv">
               <span className="emailSpan">Email*</span>
-              <input className="emailInput" placeholder="Example: youremail@example.com" />
+              <input className="emailInput" placeholder="Example: youremail@example.com" onChange={(e) => setEmail(e.target.value)} />
             </div>
           </div>
           <div className="submitContainer">
             <div className="submitDiv">
-              <button className="submitBtn" type="button">Post Review</button>
+              <button className="submitBtn" type="button" onClick={() => { handleSubmit(); closeModal(); }}>Post Review</button>
             </div>
           </div>
         </div>
