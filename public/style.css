@@ -798,10 +798,12 @@ input[type = 'radio'] {
     border-bottom-style: solid;
     border-bottom-width: 2px;
     overflow: hidden;
+    display: flex;;
 }
 
 .averageRating {
-    margin-top: 5px;
+    margin-top: 75px;
+    margin-bottom: 50px;
     margin-right: 15px;
     padding-bottom: 5px;
     padding-top: 15px;
@@ -809,9 +811,18 @@ input[type = 'radio'] {
 }
 .averageRatingText {
     margin-top: 5px;
-    padding-left: 15px;
+    padding-left: 0px;
     padding-top: 15px;
     padding-bottom: 5px;
     font-size: 24px;
     float: right;
+}
+.histogramContainer {
+    padding-top: 30px;
+    flex: 1;
+}
+
+.reviewButtonContainer {
+    margin-right: 10px;
+    margin-top: 10px;
 }

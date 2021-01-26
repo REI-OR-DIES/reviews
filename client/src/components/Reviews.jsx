@@ -61,7 +61,7 @@ class Reviews extends React.Component {
     return (
       <div>
         <div>
-          <ReviewSummary reviews={this.state.reviews} />
+          <ReviewSummary postReview={this.postReview} reviews={this.state.reviews} />
         </div>
         <ReviewList
           reviews={this.state.reviews}

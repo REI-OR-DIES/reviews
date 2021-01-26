@@ -121,6 +121,6 @@ app.listen(PORT, ((err) => {
   if (err) {
     throw err;
   } else {
-    console.log('Listening on port on localHost 3000');
+    console.log('Listening on port on localHost', `${PORT}`);
   }
 }));

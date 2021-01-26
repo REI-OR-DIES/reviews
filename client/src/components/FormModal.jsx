@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { useState } from "react";
 import Modal from 'react-modal';
 import { FaStar } from 'react-icons/fa';
-import axios from 'axios';
 
 const customStyles = {
   content: {
@@ -53,7 +52,7 @@ function FormModal(props) {
   };
 
   function handleSubmit() {
-    props.postReview(postItem)
+    props.postReview(postItem);
   }
 
   const starRater = (
