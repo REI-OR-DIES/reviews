@@ -18,7 +18,7 @@ class ReviewSummary extends React.Component {
   }
 
   getReviews() {
-    axios.get('/api/reviews').then((results) => {
+    axios.get('http://localhost:3002/api/reviews').then((results) => {
       this.setState({
         ratings: (results.data.reduce((total, next) => total + next.rating, 0) / results.data.length).toFixed(1)
       });

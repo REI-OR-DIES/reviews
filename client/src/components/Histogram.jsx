@@ -24,7 +24,7 @@ export default class Example extends PureComponent {
   }
 
   getReviews() {
-    axios.get('/api/reviews').then((results) => {
+    axios.get('http://localhost:3002/api/reviews').then((results) => {
       this.setState({
         zero: results.data.filter(review => review.rating === 0),
         one: results.data.filter(review => review.rating === 1),
