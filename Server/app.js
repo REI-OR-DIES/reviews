@@ -54,7 +54,7 @@ app.post('http://localhost:3002/api/reviews', (req, res) => {
   });
 });
 
-app.put('http://localhost:3002/api/reviews/:id/helpfulYes', (req, res) => {
+app.put('/api/reviews/:id/helpfulYes', (req, res) => {
   const query = { _id: req.params.id };
   const newValues = { $inc: { helpfulYes: 1 } };
   db.updateOne(query, newValues, (err, data) => {
@@ -67,7 +67,7 @@ app.put('http://localhost:3002/api/reviews/:id/helpfulYes', (req, res) => {
   });
 });
 
-app.put('http://localhost:3002/api/reviews/:id/helpfulYesClicked', (req, res) => {
+app.put('/api/reviews/:id/helpfulYesClicked', (req, res) => {
   const query = { _id: req.params.id };
   const clicked = { $set: { yesClicked: true } };
   db.updateOne(query, clicked, (err, data) => {
@@ -80,7 +80,7 @@ app.put('http://localhost:3002/api/reviews/:id/helpfulYesClicked', (req, res) =>
   });
 });
 
-app.put('http://localhost:3002/api/reviews/:id/helpfulNo', (req, res) => {
+app.put('/api/reviews/:id/helpfulNo', (req, res) => {
   const query = { _id: req.params.id };
   const newValues = { $inc: { helpfulNo: 1 } };
   db.updateOne(query, newValues, (err, data) => {
@@ -93,7 +93,7 @@ app.put('http://localhost:3002/api/reviews/:id/helpfulNo', (req, res) => {
   });
 });
 
-app.put('http://localhost:3002/api/reviews/:id/helpfulNoClicked', (req, res) => {
+app.put('/api/reviews/:id/helpfulNoClicked', (req, res) => {
   const query = { _id: req.params.id };
   const clicked = { $set: { noClicked: true } };
   db.updateOne(query, clicked, (err, data) => {
@@ -106,7 +106,7 @@ app.put('http://localhost:3002/api/reviews/:id/helpfulNoClicked', (req, res) => 
   });
 });
 
-app.put('http://localhost:3002/api/reviews/:id/inappropriate', (req, res) => {
+app.put('/api/reviews/:id/inappropriate', (req, res) => {
   const query = { _id: req.params.id };
   const newValues = { $set: { inappropriate: true } };
   db.updateOne(query, newValues, (err, data) => {
