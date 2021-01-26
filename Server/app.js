@@ -3,14 +3,16 @@
 const express = require('express');
 const path = require('path');
 const db = require('../Database/index.js');
+const cors = require('cors');
 
 const PORT = 3002;
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 app.use(express.static(`${__dirname}/../public`));
 
-app.get('/api/reviews', (req, res) => {
+app.get('http://localhost:3002/api/reviews', (req, res) => {
   db.find((err, data) => {
     if (err) {
       res.status(400);
@@ -21,7 +23,7 @@ app.get('/api/reviews', (req, res) => {
   });
 });
 
-app.post('/api/reviews', (req, res) => {
+app.post('http://localhost:3002/api/reviews', (req, res) => {
   console.log(req.body);
   const item = {
     userName: req.body.userName,
@@ -52,7 +54,7 @@ app.post('/api/reviews', (req, res) => {
   });
 });
 
-app.put('/api/reviews/:id/helpfulYes', (req, res) => {
+app.put('http://localhost:3002/api/reviews/:id/helpfulYes', (req, res) => {
   const query = { _id: req.params.id };
   const newValues = { $inc: { helpfulYes: 1 } };
   db.updateOne(query, newValues, (err, data) => {
@@ -65,7 +67,7 @@ app.put('/api/reviews/:id/helpfulYes', (req, res) => {
   });
 });
 
-app.put('/api/reviews/:id/helpfulYesClicked', (req, res) => {
+app.put('http://localhost:3002/api/reviews/:id/helpfulYesClicked', (req, res) => {
   const query = { _id: req.params.id };
   const clicked = { $set: { yesClicked: true } };
   db.updateOne(query, clicked, (err, data) => {
@@ -78,7 +80,7 @@ app.put('/api/reviews/:id/helpfulYesClicked', (req, res) => {
   });
 });
 
-app.put('/api/reviews/:id/helpfulNo', (req, res) => {
+app.put('http://localhost:3002/api/reviews/:id/helpfulNo', (req, res) => {
   const query = { _id: req.params.id };
   const newValues = { $inc: { helpfulNo: 1 } };
   db.updateOne(query, newValues, (err, data) => {
@@ -91,7 +93,7 @@ app.put('/api/reviews/:id/helpfulNo', (req, res) => {
   });
 });
 
-app.put('/api/reviews/:id/helpfulNoClicked', (req, res) => {
+app.put('http://localhost:3002/api/reviews/:id/helpfulNoClicked', (req, res) => {
   const query = { _id: req.params.id };
   const clicked = { $set: { noClicked: true } };
   db.updateOne(query, clicked, (err, data) => {
@@ -104,7 +106,7 @@ app.put('/api/reviews/:id/helpfulNoClicked', (req, res) => {
   });
 });
 
-app.put('/api/reviews/:id/inappropriate', (req, res) => {
+app.put('http://localhost:3002/api/reviews/:id/inappropriate', (req, res) => {
   const query = { _id: req.params.id };
   const newValues = { $set: { inappropriate: true } };
   db.updateOne(query, newValues, (err, data) => {
@@ -121,6 +123,6 @@ app.listen(PORT, ((err) => {
   if (err) {
     throw err;
   } else {
-    console.log('Listening on port on localHost 3000');
+    console.log('Listening on port on localHost', `${PORT}`);
   }
 }));

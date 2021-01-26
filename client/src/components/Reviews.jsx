@@ -24,27 +24,27 @@ class Reviews extends React.Component {
   }
 
   onYesClick(id) {
-    axios.put('/api/reviews/' +id+'/helpfulYes').then(this.getReviews());
+    axios.put('http://localhost:3002/api/reviews/' +id+'/helpfulYes').then(this.getReviews());
   }
 
   onYesClicked(id) {
-    axios.put('/api/reviews/' +id+'/helpfulYesClicked').then(this.getReviews());
+    axios.put('http://localhost:3002/api/reviews/' +id+'/helpfulYesClicked').then(this.getReviews());
   }
 
   onNoClick(id) {
-    axios.put('/api/reviews/' +id+'/helpfulNo').then(this.getReviews());
+    axios.put('http://localhost:3002/api/reviews/' +id+'/helpfulNo').then(this.getReviews());
   }
 
   onNoClicked(id) {
-    axios.put('/api/reviews/' +id+'/helpfulNoClicked').then(this.getReviews());
+    axios.put('http://localhost:3002/api/reviews/' +id+'/helpfulNoClicked').then(this.getReviews());
   }
 
   onInappropriate(id) {
-    axios.put('/api/reviews/'+id+ '/inappropriate').then(this.getReviews());
+    axios.put('http://localhost:3002/api/reviews/'+id+ '/inappropriate').then(this.getReviews());
   }
 
   getReviews() {
-    axios.get('/api/reviews').then((results) => {
+    axios.get('http://localhost:3002/api/reviews').then((results) => {
       this.setState({
         reviews: results.data,
       });
@@ -52,7 +52,7 @@ class Reviews extends React.Component {
   }
 
   postReview(postItem) {
-    axios.post('/api/reviews', postItem).then(
+    axios.post('http://localhost:3002/api/reviews', postItem).then(
       this.getReviews(),
     );
   }
@@ -61,7 +61,7 @@ class Reviews extends React.Component {
     return (
       <div>
         <div>
-          <ReviewSummary reviews={this.state.reviews} />
+          <ReviewSummary postReview={this.postReview} reviews={this.state.reviews} />
         </div>
         <ReviewList
           reviews={this.state.reviews}

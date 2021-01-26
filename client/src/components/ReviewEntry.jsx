@@ -77,24 +77,14 @@ function ReviewEntry(props) {
       </button>
     );
   }
-  if (ratingValue === 0) {
-    ratingComponent = (
-      <span>
-        <FaStar size={15} color="rgb(201,201,201)" />
-        <FaStar size={15} color="rgb(201,201,201)" />
-        <FaStar size={15} color="rgb(201,201,201)" />
-        <FaStar size={15} color="rgb(201,201,201)" />
-        <FaStar size={15} color="rgb(201,201,201)" />
-      </span>
-    );
-  } if (ratingValue === 1) {
+  if (ratingValue === 1) {
     ratingComponent = (
       <span>
         <FaStar size={15} color="rgb(0, 113, 141)" />
-        <FaStar size={15} color="rgb(0, 113, 141)" />
-        <FaStar size={15} color="rgb(0, 113, 141)" />
-        <FaStar size={15} color="rgb(0, 113, 141)" />
-        <FaStar size={15} color="rgb(0, 113, 141)" />
+        <FaStar size={15} color="rgb(201,201,201)" />
+        <FaStar size={15} color="rgb(201,201,201)" />
+        <FaStar size={15} color="rgb(201,201,201)" />
+        <FaStar size={15} color="rgb(201,201,201)" />
       </span>
     );
   } if (ratingValue === 2) {
@@ -134,7 +124,7 @@ function ReviewEntry(props) {
         <FaStar size={15} color="rgb(0, 113, 141)" />
         <FaStar size={15} color="rgb(0, 113, 141)" />
         <FaStar size={15} color="rgb(0, 113, 141)" />
-        <FaStar size={15} color="rgb(201,201,201)" />
+        <FaStar size={15} color="rgb(0, 113, 141)" />
       </span>
     );
   }
