@@ -36,9 +36,9 @@ jobs:
       - run:
           name: Run DataBase Tests
           command: npm run db:test
-      - run:
-          name: Run App Tests
-          command: npm run app:test
+      # - run:
+      #     name: Run App Tests
+      #     command: npm run app:test
           
 
 workflows:
