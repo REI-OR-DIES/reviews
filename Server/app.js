@@ -4,7 +4,7 @@ const express = require('express');
 const path = require('path');
 const db = require('../Database/index.js');
 
-const PORT = 3000;
+const PORT = 3002;
 const app = express();
 
 app.use(express.json());
@@ -30,17 +30,20 @@ app.post('/api/reviews', (req, res) => {
     rating: req.body.rating,
     title: req.body.title,
     createdAt: req.body.createdAt,
-    helpfulYes: req.body.helpfulYes,
+    helpfulYes: 0,
+    helpfulNo: 0,
     body: req.body.body,
     photo: req.body.imageUrl,
-    location: req.body.city,
+    location: req.body.location,
     inappropriate: req.body.inappropriate,
     recommend: req.body.recommend,
+    yesClicked: false,
+    noClicked: false,
   };
   db.create(item, (err, data) => {
     if (err) {
       res.status(400);
-      console.log('no');
+      console.log(err);
     } else {
       res.status(201);
       res.send(data);

@@ -1,11 +1,10 @@
 import React from 'react';
 import axios from 'axios';
 import ReviewList from './ReviewList.jsx';
-import ReviewSnapShot from './ReviewSnapShot.jsx'
-import ReviewEntry from './ReviewEntry.jsx';
 import FormModal from './FormModal.jsx';
+import ReviewSummary from './ReviewSummary.jsx';
 
-class App extends React.Component {
+class Reviews extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -16,7 +15,8 @@ class App extends React.Component {
     this.onNoClick = this.onNoClick.bind(this);
     this.onInappropriate = this.onInappropriate.bind(this);
     this.onYesClicked = this.onYesClicked.bind(this);
-    this.onNoClicked = this.onNoClicked.bind(this)
+    this.onNoClicked = this.onNoClicked.bind(this);
+    this.postReview = this.postReview.bind(this);
   }
 
   componentDidMount() {
@@ -36,12 +36,10 @@ class App extends React.Component {
   }
 
   onNoClicked(id) {
-    console.log('clicked')
     axios.put('/api/reviews/' +id+'/helpfulNoClicked').then(this.getReviews());
   }
 
   onInappropriate(id) {
-    console.log('clicked')
     axios.put('/api/reviews/'+id+ '/inappropriate').then(this.getReviews());
   }
 
@@ -53,16 +51,29 @@ class App extends React.Component {
     });
   }
 
+  postReview(postItem) {
+    axios.post('/api/reviews', postItem).then(
+      this.getReviews(),
+    );
+  }
+
   render() {
     return (
       <div>
         <div>
-          <FormModal />
+          <ReviewSummary reviews={this.state.reviews} />
         </div>
-        <ReviewList reviews={this.state.reviews} onYesClick={this.onYesClick} onYesClicked={this.onYesClicked} onNoClick={this.onNoClick} onNoClicked={this.onNoClicked} onInappropriate ={this.onInappropriate} />
+        <ReviewList
+          reviews={this.state.reviews}
+          onYesClick={this.onYesClick}
+          onYesClicked={this.onYesClicked}
+          onNoClick={this.onNoClick}
+          onNoClicked={this.onNoClicked}
+          onInappropriate={this.onInappropriate}
+        />
       </div>
     );
   }
 }
 
-export default App;
+export default Reviews;

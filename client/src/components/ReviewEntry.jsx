@@ -142,20 +142,10 @@ function ReviewEntry(props) {
   return (
     <div className="reviewEntryContainer">
       <div className="authorProfile">
-        <div className="usernameContainer">
-          <div className="usernameDiv">
-            <span className="usernameSpan">{props.review.userName}</span>
-          </div>
-        </div>
-        <div className="locationCountContainer">
-          <div className="locationDiv">
-            <span className="locationSpan">{props.review.location}</span>
-          </div>
-          <div className="countDiv">
-            <span className="countTitleSpan">Reviews</span>
-            <span className="countSpan">  {props.review.reviewCount}</span>
-          </div>
-        </div>
+        <ul>
+          <li className="author"><span className="usernameSpan">{props.review.userName}</span></li>
+          <li className="author"><span className="locationSpan">{props.review.location}</span></li>
+        </ul>
       </div>
       <div className="reviewDiv">
         <div className="reviewHeader">

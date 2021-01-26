@@ -17,7 +17,7 @@ const review = new Schema(
   {
     rating: Number,
     userName: String,
-    age: Number,
+    age: String,
     reviewCount: Number,
     title: String,
     createdAt: Date,
