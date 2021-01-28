@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(`${__dirname}/../public`));
 
-app.get('http://localhost:3002/api/reviews', (req, res) => {
+app.get('/api/reviews', (req, res) => {
   db.find((err, data) => {
     if (err) {
       res.status(400);
@@ -23,8 +23,7 @@ app.get('http://localhost:3002/api/reviews', (req, res) => {
   });
 });
 
-app.post('http://localhost:3002/api/reviews', (req, res) => {
-  console.log(req.body);
+app.post('/api/reviews', (req, res) => {
   const item = {
     userName: req.body.userName,
     age: req.body.age,

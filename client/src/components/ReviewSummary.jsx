@@ -11,6 +11,7 @@ class ReviewSummary extends React.Component {
       ratings: '',
     };
     this.getReviews = this.getReviews.bind(this);
+    this.newReview = this.newReview.bind(this);
   }
 
   componentDidMount() {
@@ -25,8 +26,11 @@ class ReviewSummary extends React.Component {
     });
   }
 
+  newReview() {
+    this.getReviews();
+  }
+
   render() {
-      console.log(this.state.ratings)
     let ratingComponent;
     if (this.state.ratings >= 0.5) {
         ratingComponent = (
@@ -42,10 +46,10 @@ class ReviewSummary extends React.Component {
         ratingComponent = (
           <span>
             <FaStar size={50} color="rgb(0, 113, 141)" />
-            <FaStar size={50} color="rgb(0, 113, 141)" />
-            <FaStar size={50} color="rgb(0, 113, 141)" />
-            <FaStar size={50} color="rgb(0, 113, 141)" />
-            <FaStar size={50} color="rgb(0, 113, 141)" />
+            <FaStar size={50} color="rgb(201,201,201)" />
+            <FaStar size={50} color="rgb(201,201,201)" />
+            <FaStar size={50} color="rgb(201,201,201)" />
+            <FaStar size={50} color="rgb(201,201,201)" />
           </span>
         );
       } if (this.state.ratings > 1.5 && this.state.ratings <= 2.5) {
@@ -85,7 +89,7 @@ class ReviewSummary extends React.Component {
             <FaStar size={40} color="rgb(0, 113, 141)" />
             <FaStar size={40} color="rgb(0, 113, 141)" />
             <FaStar size={40} color="rgb(0, 113, 141)" />
-            <FaStar size={40} color="rgb(201,201,201)" />
+            <FaStar size={40} color="rgb(0, 113, 141)" />
           </span>
         );
     }
@@ -101,7 +105,7 @@ class ReviewSummary extends React.Component {
                 </p>
           </div>
         <div className="reviewButtonContainer">
-        <FormModal postReview={this.props.postReview}/>
+        <FormModal postReview={this.props.postReview} newReview={this.newReview}/>
         </div>
       </div>
     );
