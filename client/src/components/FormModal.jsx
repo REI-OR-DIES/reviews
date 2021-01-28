@@ -15,6 +15,7 @@ const customStyles = {
     width: '900px',
     margin: '0px',
     height: 'auto',
+
   },
 };
 
@@ -53,6 +54,7 @@ function FormModal(props) {
 
   function handleSubmit() {
     props.postReview(postItem);
+    props.newReview();
   }
 
   const starRater = (
@@ -82,7 +84,7 @@ function FormModal(props) {
   );
 
   return (
-    <div>
+    <div className="modal">
       <button type="submit" className="button button1" onClick={openModal}>Write a Review</button>
       <Modal
         isOpen={modalIsOpen}
@@ -90,7 +92,11 @@ function FormModal(props) {
         style={customStyles}
         contentLabel="Example Modal"
       >
-        <div className="formSideBar" />
+        <div className="formSideBar">
+          <div className="imageDiv">
+             <img src="https://www.rei.com/media/8d141ee9-a7be-40b3-b5b5-c629af3903d0" width="161px" height="118"/>
+          </div>
+        </div>
         <div className="formContainer">
           <button className="closeModal" type="submit" onClick={closeModal} />
           <div className="productOverviewDiv"><span className="productOverviewTitle">My Review for REI Co-op Wool Stripe Beanie</span></div>

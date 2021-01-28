@@ -2,9 +2,7 @@ import React from 'react';
 import moment from 'moment'
 import { FaStar } from 'react-icons/fa';
 
-
 function ReviewEntry(props) {
-  
   const recommendValue = props.review.recommend;
   const inappropriateValue = props.review.inappropriate;
   let yesClickedValue = props.review.yesClicked;
@@ -64,14 +62,14 @@ function ReviewEntry(props) {
   }
   if (onNoClickedValue === false) {
     noClicked = (
-      <button type="button" disabled={false } className="btnNo" onClick={() => {props.onNoClick(props.review._id); props.onNoClicked(props.review._id)}}>
+      <button type="button" disabled={false} className="btnNo" onClick={() => {props.onNoClick(props.review._id); props.onNoClicked(props.review._id)}}>
         No-
         <span className="noText">{props.review.helpfulNo}</span>
       </button>
     );
   } else {
     noClicked = (
-      <button type="button" disabled = { true } className="btnNo">
+      <button type="button" disabled className="btnNo">
         No-
         <span className="noText">{props.review.helpfulNo}</span>
       </button>

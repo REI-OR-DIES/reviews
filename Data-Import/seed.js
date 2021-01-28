@@ -20,13 +20,13 @@ MongoClient.connect(url, (err, client) => {
   for (let i = 0; i < 5; i++) {
     const review = {
       userName: faker.internet.userName(),
-      rating: Math.floor(Math.random() * 5),
+      rating: Math.floor(Math.random() * 4) + 1,
       photo: faker.image.imageUrl(),
       reviewCount: Math.floor(Math.random() * 20),
       title: faker.lorem.words(7),
       createdAt: faker.date.recent(),
-      helpfulYes: 0,
-      helpfulNo: 0,
+      helpfulYes: Math.floor(Math.random() * 4),
+      helpfulNo: Math.floor(Math.random() * 2),
       body: faker.lorem.words(20),
       location: faker.address.city(),
       inappropriate: false,
