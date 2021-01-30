@@ -2,7 +2,7 @@
 /* eslint-disable no-console */
 const express = require('express');
 const path = require('path');
-const db = require('../Database/index.js');
+const db = require('../DataBase/index.js');
 const cors = require('cors');
 
 const PORT = 3002;

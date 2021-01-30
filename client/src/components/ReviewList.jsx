@@ -28,7 +28,7 @@ const ReviewList = (props) => {
           <option value="Select">Sort By</option>
           <option value="helpfulYes">Most Helpful</option>
           <option value="ratingHigh">Highest to Lowest Rating</option>
-          <option value="ratingLow" >Lowest to Highest Rating</option>
+          <option value="ratingLow">Lowest to Highest Rating</option>
           <option value="createdAt">Most Recent</option>
         </select>
       </div>

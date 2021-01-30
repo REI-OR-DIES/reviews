@@ -8,7 +8,7 @@
     "test:watch": "jest --watch",
     "db:test": "jest ./spec/dataBaseSpec/dataBase.test.js",
     "test": "jest ./spec/sum.test.js",
-    "start": " nodemon ./Server/app.js",
+    "start": "node ./Data-Import/seed.js && node ./Server/app.js",
     "seed": " node ./Data-Import/seed.js",
     "build": "webpack",
     "watch": "webpack -w"
