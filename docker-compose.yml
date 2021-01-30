@@ -1,0 +1,19 @@
+version: '3'
+services:
+  app: 
+    container_name: GAR-FEC-REVIEWS
+    restart: always
+    build: . 
+    ports:
+      - '3002:3002'
+    links:
+     - mongo
+  mongo:
+    container_name: mongo
+    image: mongo
+    volumes:
+      - test:/data/db
+    ports:
+     - '27018:27017'
+volumes:
+  test:
