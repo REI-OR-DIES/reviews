@@ -50,6 +50,7 @@ function FormModal(props) {
     location: city,
     recommend,
     inappropriate: false,
+    createdAt: new Date(),
   };
 
   function handleSubmit() {
