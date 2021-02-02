@@ -36,7 +36,7 @@ class Reviews extends React.Component {
   }
 
   onNoClicked(id) {
-    axios.put('http://ec2-3-141-14-95.us-east-2.compute.amazonaws.com:3002/api/reviews/' +id+'/helpfulNoClicked').then(this.getReviews());
+    axios.put('http://ec2-3-141-20-172.us-east-2.compute.amazonaws.com:3002/api/reviews/' +id+'/helpfulNoClicked').then(this.getReviews());
   }
 
   onInappropriate(id) {
