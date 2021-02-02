@@ -23,7 +23,7 @@ export default class Example extends PureComponent {
   }
 
   getReviews() {
-    axios.get('http://ec2-3-141-14-95.us-east-2.compute.amazonaws.com:3002/api/reviews').then((results) => {
+    axios.get('http://ec2-3-141-20-172.us-east-2.compute.amazonaws.com:3002/api/reviews').then((results) => {
       this.setState({
         zero: results.data.filter(review => review.rating === 0),
         one: results.data.filter(review => review.rating === 1),
