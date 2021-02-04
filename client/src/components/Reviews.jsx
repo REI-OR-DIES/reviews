@@ -24,27 +24,27 @@ class Reviews extends React.Component {
   }
 
   onYesClick(id) {
-    axios.put('http://ec2-3-141-20-172.us-east-2.compute.amazonaws.com:3002/api/reviews/' +id+'/helpfulYes').then(this.getReviews());
+    axios.put('api/reviews/' +id+'/helpfulYes').then(this.getReviews());
   }
 
   onYesClicked(id) {
-    axios.put('http://ec2-3-141-20-172.us-east-2.compute.amazonaws.com:3002/api/reviews/' +id+'/helpfulYesClicked').then(this.getReviews());
+    axios.put('api/reviews/' +id+'/helpfulYesClicked').then(this.getReviews());
   }
 
   onNoClick(id) {
-    axios.put('http://ec2-3-141-20-172.us-east-2.compute.amazonaws.com:3002/api/reviews/' +id+'/helpfulNo').then(this.getReviews());
+    axios.put('api/reviews/' +id+'/helpfulNo').then(this.getReviews());
   }
 
   onNoClicked(id) {
-    axios.put('http://ec2-3-141-20-172.us-east-2.compute.amazonaws.com:3002/api/reviews/' +id+'/helpfulNoClicked').then(this.getReviews());
+    axios.put('api/reviews/' +id+'/helpfulNoClicked').then(this.getReviews());
   }
 
   onInappropriate(id) {
-    axios.put('http://ec2-3-141-20-172.us-east-2.compute.amazonaws.com:3002/api/reviews/'+id+ '/inappropriate').then(this.getReviews());
+    axios.put('api/reviews/'+id+ '/inappropriate').then(this.getReviews());
   }
 
   getReviews() {
-    axios.get('http://ec2-3-141-20-172.us-east-2.compute.amazonaws.com:3002/api/reviews').then((results) => {
+    axios.get('api/reviews').then((results) => {
       this.setState({
         reviews: results.data,
       });
@@ -52,7 +52,7 @@ class Reviews extends React.Component {
   }
 
   postReview(postItem) {
-    axios.post('http://ec2-3-141-20-172.us-east-2.compute.amazonaws.com:3002/api/reviews', postItem).then(
+    axios.post('api/reviews', postItem).then(
       this.getReviews(),
     );
   }

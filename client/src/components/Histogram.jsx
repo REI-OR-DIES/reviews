@@ -23,7 +23,7 @@ export default class Example extends PureComponent {
   }
 
   getReviews() {
-    axios.get('http://ec2-3-141-20-172.us-east-2.compute.amazonaws.com:3002/api/reviews').then((results) => {
+    axios.get('api/reviews').then((results) => {
       this.setState({
         zero: results.data.filter(review => review.rating === 0),
         one: results.data.filter(review => review.rating === 1),
@@ -66,7 +66,7 @@ export default class Example extends PureComponent {
         <Tooltip />
         <Bar dataKey="count" fill="rgb(0, 113, 141)" background={{ fill: 'rgb(221, 221, 221)' }} />
       </BarChart>
-      
+
     );
   }
 }

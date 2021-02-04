@@ -3,7 +3,7 @@
 const faker = require('faker');
 const { MongoClient } = require('mongodb');
 
-const url = 'mongodb://mongo:27017';
+const url = 'mongodb://localhost:27017';
 
 const dbName = 'products';
 
