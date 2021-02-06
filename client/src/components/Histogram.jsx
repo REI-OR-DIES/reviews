@@ -25,12 +25,12 @@ export default class Example extends PureComponent {
   getReviews() {
     axios.get('api/reviews').then((results) => {
       this.setState({
-        zero: results.data.filter(review => review.rating === 0),
-        one: results.data.filter(review => review.rating === 1),
-        two: results.data.filter(review => review.rating === 2),
-        three: results.data.filter(review => review.rating === 3),
-        four: results.data.filter(review => review.rating === 4),
-        five: results.data.filter(review => review.rating === 5),
+        zero: results.data.rows.filter(review => Number(review.rating) === 0),
+        one: results.data.rows.filter(review => Number(review.rating) === 1),
+        two: results.data.rows.filter(review => Number(review.rating) === 2),
+        three: results.data.rows.filter(review => Number(review.rating) === 3),
+        four: results.data.rows.filter(review => Number(review.rating) === 4),
+        five: results.data.rows.filter(review => Number(review.rating) === 5),
       });
     });
   }

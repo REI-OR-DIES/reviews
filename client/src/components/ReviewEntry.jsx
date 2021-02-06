@@ -3,6 +3,7 @@ import moment from 'moment'
 import { FaStar } from 'react-icons/fa';
 
 function ReviewEntry(props) {
+  const rid = props.review.reviews_id;
   const recommendValue = props.review.recommend;
   const inappropriateValue = props.review.inappropriate;
   let yesClickedValue = props.review.yesClicked;
@@ -38,7 +39,7 @@ function ReviewEntry(props) {
   }
   if (inappropriateValue === false) {
     inappropriate = (
-      <button type="button" className="reportBtn" onClick={() => props.onInappropriate(props.review._id)}>Report as Inappropriate</button>
+      <button type="button" className="reportBtn" onClick={() => props.onInappropriate(rid)}>Report as Inappropriate</button>
     );
   } else {
     inappropriate = (
@@ -47,7 +48,7 @@ function ReviewEntry(props) {
   }
   if (yesClickedValue === false) {
     yesClicked = (
-      <button type="button" disabled={false} className="btnYes" onClick={() => {props.onYesClick(props.review._id); props.onYesClicked(props.review._id)}}>
+      <button type="button" disabled={false} className="btnYes" onClick={() => {props.onYesClick(rid); props.onYesClicked(rid)}}>
         Yes-
         <span className="yesText">{props.review.helpfulYes}</span>
       </button>
@@ -62,7 +63,7 @@ function ReviewEntry(props) {
   }
   if (onNoClickedValue === false) {
     noClicked = (
-      <button type="button" disabled={false} className="btnNo" onClick={() => {props.onNoClick(props.review._id); props.onNoClicked(props.review._id)}}>
+      <button type="button" disabled={false} className="btnNo" onClick={() => {props.onNoClick(rid); props.onNoClicked(rid)}}>
         No-
         <span className="noText">{props.review.helpfulNo}</span>
       </button>
@@ -131,7 +132,7 @@ function ReviewEntry(props) {
     <div className="reviewEntryContainer">
       <div className="authorProfile">
         <ul>
-          <li className="author"><span className="usernameSpan">{props.review.userName}</span></li>
+          <li className="author"><span className="usernameSpan">{props.review.username}</span></li>
           <li className="author"><span className="locationSpan">{props.review.location}</span></li>
         </ul>
       </div>
@@ -139,7 +140,7 @@ function ReviewEntry(props) {
         <div className="reviewHeader">
           <div className="reviewStarDateContainer">
             <span className="starRatingSpan">{ratingComponent}</span>
-            <div className="dateDiv">{moment(props.review.createdAt).fromNow()}</div>
+            <div className="dateDiv">{moment(props.review.created_at).fromNow()}</div>
           </div>
           <div className="reviewTitleDiv">
             <h3 className="reviewTitle">{props.review.title}</h3>

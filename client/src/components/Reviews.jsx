@@ -36,17 +36,18 @@ class Reviews extends React.Component {
   }
 
   onNoClicked(id) {
-    axios.put('api/reviews/' +id+'/helpfulNoClicked').then(this.getReviews());
+    axios.put('api/reviews/'+id+'/helpfulNoClicked').then(this.getReviews());
   }
 
   onInappropriate(id) {
-    axios.put('api/reviews/'+id+ '/inappropriate').then(this.getReviews());
+    axios.put('api/reviews/'+id+'/inappropriate').then(this.getReviews());
   }
 
   getReviews() {
     axios.get('api/reviews').then((results) => {
+      console.log(results);
       this.setState({
-        reviews: results.data,
+        reviews: results.data.rows,
       });
     });
   }

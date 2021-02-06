@@ -8,11 +8,12 @@
     "test:watch": "jest --watch",
     "db:test": "jest ./spec/dataBaseSpec/dataBase.test.js",
     "test": "jest ./spec/sum.test.js",
-    "start": "node ./Server/app.js",
-    "seed": " node ./Data-Import/seed.js",
+    "start": "node ./Server/index.js",
     "build": "webpack",
     "watch": "webpack -w",
-    "generate": "node ./Data-Import/dataGenerator.js"
+    "db": "psql -f ./Data-Import/reviewsSchema.sql",
+    "generate": "node ./Data-Import/dataGenerator.js",
+    "seed": " node ./Data-Import/dataImporter.js"
   },
   "repository": {
     "type": "git",
