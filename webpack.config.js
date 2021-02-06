@@ -22,4 +22,8 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
   },
+  optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin()],
+  }
 };
