@@ -2,8 +2,6 @@ const fs = require('fs');
 const faker = require('faker');
 const csv = require('csvtojson');
 const { Parser } = require('json2csv');
-const Bluebird = require('bluebird');
-
 
 //USERS IMPORT TO CSV
 let userHeader = ["username", "age", "email", "location"];
@@ -45,8 +43,8 @@ let oneAtATime = ()=> {
   let reviewsData = [];
   for(let i = 0; i< 100000; i++) {
     reviewsData[i] = {
-      "user_id": Math.floor(Math.random() * 10000),
-      "product_id": Math.floor(Math.random() * 10000),
+      "user_id": Math.floor(Math.random() * 10000) + 1,
+      "product_id": Math.floor(Math.random() * 10000) +1,
       "title": faker.random.words(),
       "created_at": faker.date.past(),
       "body": faker.lorem.paragraph(),
@@ -57,7 +55,9 @@ let oneAtATime = ()=> {
       "inappropriate": false
     }
   }
-  const reviewsInCsv = new Parser ({ fields: reviewsHeader }).parse(reviewsData);
+
+  let reviewsInCsv = new Parser ({ fields: reviewsHeader }).parse(reviewsData).replace('"user_id","product_id","title","created_at","body","rating","recommend","helpfulYes","helpfulNo","inappropriate"', '');
+
   let reviewWriter = fs.createWriteStream('reviews.csv', {flags: 'a'});
   reviewWriter.write(reviewsInCsv);
   n = n+1;

@@ -40,6 +40,7 @@ function FormModal(props) {
   const [rating, setRating] = useState(null);
   const [hover, setHover] = useState(null);
 
+  let date = new Date();
   let postItem = {
     userName,
     age,
@@ -50,7 +51,7 @@ function FormModal(props) {
     location: city,
     recommend,
     inappropriate: false,
-    createdAt: new Date(),
+    createdAt: date.toLocaleDateString("en-US"),
   };
 
   function handleSubmit() {
