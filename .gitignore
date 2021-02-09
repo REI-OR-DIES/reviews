@@ -4,3 +4,4 @@ node_modules
 /Data-Import/reviews.csv
 /Data-Import/users.csv
 /Data-Import/products.csv
+newrelic.js

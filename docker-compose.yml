@@ -1,19 +1,19 @@
 version: '3'
+
+volumes:
+  storage:
+
 services:
-  app: 
-    container_name: GAR-FEC-REVIEWS
-    restart: always
-    build: . 
+  reviews:
+    build: .
+    depends_on:
+      - 'postgres'
     ports:
       - '3002:3002'
-    links:
-     - mongo
-  mongo:
-    container_name: mongo
-    image: mongo
-    volumes:
-      - test:/data/db
+
+  postgres:
+    image: postgres
     ports:
-     - '27018:27017'
-volumes:
-  test:
+      - '5432:5432'
+    volumes:
+      - 'storage:/data/db'

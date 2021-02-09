@@ -1,17 +1,15 @@
-FROM node:latest
-
-ENV NODE_ENV=production
+FROM node:14
 
 RUN mkdir -p /app
 
 WORKDIR /app
 
-COPY package*.json ./ 
+COPY package*.json ./
 
-RUN npm install --production
+RUN npm install
 
 COPY . .
 
-CMD ["node", "Server/app.js"]
+EXPOSE 3002
 
-# CMD ["npm", "start"]
+CMD ["node", "Server/index.js"]

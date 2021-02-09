@@ -18,7 +18,7 @@ app.use(express.static(`${__dirname}/../public`));
 // connecting to the database
 const pool = new Pool({
   user: 'postgres',
-  host: 'localhost',
+  host: 'postgres',
   database: 'reviews',
   password: 'root',
   port: '5432',
