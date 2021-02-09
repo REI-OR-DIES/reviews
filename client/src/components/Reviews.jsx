@@ -24,6 +24,7 @@ class Reviews extends React.Component {
   }
 
   onYesClick(id) {
+    console.log(id);
     axios.put('api/reviews/' +id+'/helpfulYes').then(this.getReviews());
   }
 
@@ -40,6 +41,7 @@ class Reviews extends React.Component {
   }
 
   onInappropriate(id) {
+    console.log(id);
     axios.put('api/reviews/'+id+'/inappropriate').then(this.getReviews());
   }
 
@@ -53,9 +55,8 @@ class Reviews extends React.Component {
   }
 
   postReview(postItem) {
-    axios.post('api/reviews', postItem).then(
-      this.getReviews(),
-    );
+    axios.post('api/reviews', postItem)
+    .then(this.getReviews());
   }
 
   render() {

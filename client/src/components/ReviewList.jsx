@@ -4,12 +4,12 @@ import ReviewEntry from './ReviewEntry';
 
 
 const ReviewList = (props) => {
-  const [sort, setSort] = useState(null); 
+  const [sort, setSort] = useState(null);
 
   let { reviews } = props;
 
   if (sort === "helpfulYes") {
-    props.reviews.sort((a, b) => b.helpfulYes - a.helpfulYes);
+    props.reviews.sort((a, b) => b.helpfulyes - a.helpfulyes);
   }
   if (sort === "ratingLow") {
     props.reviews.sort((a, b) => a.rating - b.rating);
@@ -18,7 +18,7 @@ const ReviewList = (props) => {
     props.reviews.sort((a, b) => b.rating - a.rating);
   }
   if (sort === "createdAt") {
-    props.reviews.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+    props.reviews.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
   }
 
   return (
@@ -33,7 +33,7 @@ const ReviewList = (props) => {
         </select>
       </div>
       <div>
-        {reviews.map((review) =>(<ReviewEntry key={review._id} review={review} onNoClick={props.onNoClick} onNoClicked={props.onNoClicked} onYesClick={props.onYesClick} onYesClicked={props.onYesClicked} onInappropriate={props.onInappropriate}/>))}
+        {reviews.map((review) =>(<ReviewEntry key={reviews._id} review={review} onNoClick={props.onNoClick} onNoClicked={props.onNoClicked} onYesClick={props.onYesClick} onYesClicked={props.onYesClicked} onInappropriate={props.onInappropriate}/>))}
       </div>
     </div>
   );

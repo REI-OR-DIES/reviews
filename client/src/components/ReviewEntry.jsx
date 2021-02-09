@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
 import moment from 'moment'
 import { FaStar } from 'react-icons/fa';
@@ -6,8 +7,8 @@ function ReviewEntry(props) {
   const rid = props.review.reviews_id;
   const recommendValue = props.review.recommend;
   const inappropriateValue = props.review.inappropriate;
-  let yesClickedValue = props.review.yesClicked;
-  let onNoClickedValue = props.review.noClicked;
+  let yesClickedValue = false;
+  let onNoClickedValue = false;
   let ratingValue = props.review.rating;
 
   let recommend;
@@ -48,31 +49,31 @@ function ReviewEntry(props) {
   }
   if (yesClickedValue === false) {
     yesClicked = (
-      <button type="button" disabled={false} className="btnYes" onClick={() => {props.onYesClick(rid); props.onYesClicked(rid)}}>
+      <button type="button" className="btnYes" onClick={() => { props.onYesClick(rid); }}>
         Yes-
-        <span className="yesText">{props.review.helpfulYes}</span>
+        <span className="yesText">{props.review.helpfulyes}</span>
       </button>
     );
   } else {
     yesClicked = (
-      <button type="button" disabled={true} className="btnYes">
+      <button type="button" className="btnYes">
         Yes-
-        <span className="yesText">{props.review.helpfulYes}</span>
+        <span className="yesText">{props.review.helpfulyes}</span>
       </button>
     );
   }
   if (onNoClickedValue === false) {
     noClicked = (
-      <button type="button" disabled={false} className="btnNo" onClick={() => {props.onNoClick(rid); props.onNoClicked(rid)}}>
+      <button type="button" className="btnNo" onClick={() => { props.onNoClick(rid); }}>
         No-
-        <span className="noText">{props.review.helpfulNo}</span>
+        <span className="noText">{props.review.helpfulno}</span>
       </button>
     );
   } else {
     noClicked = (
-      <button type="button" disabled className="btnNo">
+      <button type="button" className="btnNo">
         No-
-        <span className="noText">{props.review.helpfulNo}</span>
+        <span className="noText">{props.review.helpfulno}</span>
       </button>
     );
   }
