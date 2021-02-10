@@ -1,7 +1,3 @@
 node_modules
 /Data-Import/Scraper
-/Data-Import/photos.csv
-/Data-Import/reviews.csv
-/Data-Import/users.csv
-/Data-Import/products.csv
 newrelic.js
