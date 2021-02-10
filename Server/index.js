@@ -3,9 +3,7 @@
 /* eslint-disable camelcase */
 const { Pool, Client } = require('pg');
 const express = require('express');
-const path = require('path');
 const cors = require('cors');
-const db = require('../DataBase/index.js');
 const nr= require('newrelic');
 
 const PORT = 3002;

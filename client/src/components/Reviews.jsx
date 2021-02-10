@@ -25,28 +25,28 @@ class Reviews extends React.Component {
 
   onYesClick(id) {
     console.log(id);
-    axios.put('http://34.222.75.98:3002/api/reviews/' +id+'/helpfulYes').then(this.getReviews());
+    axios.put('http://34.212.121.163:3002/api/reviews/' +id+'/helpfulYes').then(this.getReviews());
   }
 
   onYesClicked(id) {
-    axios.put('http://34.222.75.98:3002/api/reviews/' +id+'/helpfulYesClicked').then(this.getReviews());
+    axios.put('http://34.212.121.163:3002/api/reviews/' +id+'/helpfulYesClicked').then(this.getReviews());
   }
 
   onNoClick(id) {
-    axios.put('http://34.222.75.98:3002/api/reviews/' +id+'/helpfulNo').then(this.getReviews());
+    axios.put('http://34.212.121.163:3002/api/reviews/' +id+'/helpfulNo').then(this.getReviews());
   }
 
   onNoClicked(id) {
-    axios.put('http://34.222.75.98:3002/api/reviews/'+id+'/helpfulNoClicked').then(this.getReviews());
+    axios.put('http://34.212.121.163:3002/api/reviews/'+id+'/helpfulNoClicked').then(this.getReviews());
   }
 
   onInappropriate(id) {
     console.log(id);
-    axios.put('http://34.222.75.98:3002/api/reviews/'+id+'/inappropriate').then(this.getReviews());
+    axios.put('http://34.212.121.163:3002/api/reviews/'+id+'/inappropriate').then(this.getReviews());
   }
 
   getReviews() {
-    axios.get('http://34.222.75.98:3002/api/reviews').then((results) => {
+    axios.get('http://34.212.121.163:3002/api/reviews').then((results) => {
       console.log(results);
       this.setState({
         reviews: results.data.rows,
@@ -55,7 +55,7 @@ class Reviews extends React.Component {
   }
 
   postReview(postItem) {
-    axios.post('http://34.222.75.98:3002/api/reviews', postItem)
+    axios.post('http://34.212.121.163:3002/api/reviews', postItem)
     .then(this.getReviews());
   }
 
